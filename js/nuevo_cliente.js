@@ -1,4 +1,5 @@
-const formulario = document.querySelector("#formulario");
+import {mostrarAlerta} from "./funciones.js"
+export const formulario = document.querySelector("#formulario");
 
 formulario.addEventListener("submit",validarCampos);
 
@@ -17,14 +18,13 @@ function validarCampos(e){
         telefono,
         empresa,
     }
-    
+        if (validar(campos)) {
+            mostrarAlerta("Todos los campos son obligatorios");
+             return;
+         }
+        console.log("si paso la validacion");   
+}
+function validar(obj){
     //verifica que todos los campos esten completos
-    const camposCompletos = Object.values(campos).every(campo => campo !=="");
-    
-    if (camposCompletos) {
-        console.log("campos completos");
-    }
-    else{
-        console.log("no puede haber campos vacios");
-    }
+    return Object.values(obj).every(campo => campo === "");
 }
