@@ -1,4 +1,6 @@
 const url=`http://localhost:4000/clientes`;
+
+//agregamos un nuevo cliente
 export const nuevoCliente= async cliente => {
     try {
        await fetch(url,{
@@ -11,6 +13,17 @@ export const nuevoCliente= async cliente => {
 
         window.location.href="index.html";
 
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+//mostramos los clientes desde la api
+export const obtenerClientes = async() =>{
+    try {
+        const resultado = await fetch(url);//hacemos peticion a la api
+        const clientes = await resultado.json();//le indicamos que es lo que queremos
+        return clientes;//retornamos la informacion 
     } catch (error) {
         console.log(error);
     }
