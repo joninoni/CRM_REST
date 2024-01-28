@@ -1,4 +1,5 @@
-import {mostrarAlerta} from "./funciones.js"
+import {mostrarAlerta} from "./funciones.js";
+import {nuevoCliente} from "./api.js";
 export const formulario = document.querySelector("#formulario");
 
 formulario.addEventListener("submit",validarCampos);
@@ -12,17 +13,18 @@ function validarCampos(e){
     const empresa = document.querySelector("#empresa").value;
 
     //asignando los values de los campos a un objecto
-    const campos={
+    const cliente={
         nombre,
         email,
         telefono,
         empresa,
     }
-        if (validar(campos)) {
-            mostrarAlerta("Todos los campos son obligatorios");
-             return;
-         }
-        console.log("si paso la validacion");   
+    if (validar(cliente)) {
+        mostrarAlerta("Todos los campos son obligatorios");
+        return;
+    }
+    //pasando la validacion agregamos los datos del cliente en la api     
+    nuevoCliente(cliente)   
 }
 function validar(obj){
     //verifica que todos los campos esten completos
