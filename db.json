@@ -1,25 +1,11 @@
 {
   "clientes": [
     {
-      "id": "7dfa",
-      "nombre": "jonathan",
+      "id": "22e7",
+      "nombre": "cgsfg",
       "email": "jonathanbeltranhayernoni@gmail.com",
       "telefono": "5574762584",
       "empresa": "jonathan BH"
-    },
-    {
-      "id": "0a3c",
-      "nombre": "beltran beltran",
-      "email": "ril@gmail.com",
-      "telefono": "5574762584",
-      "empresa": "jonathan BH"
-    },
-    {
-      "id": "18f6",
-      "nombre": "beltran beltran",
-      "email": "jonathanbeltranhayernoni@gmail.comOOI",
-      "telefono": "5574762584",
-      "empresa": "jonathan BH ff"
     }
   ]
 }
