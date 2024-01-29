@@ -5,8 +5,11 @@ import {obtenerCliente} from "./api.js";
     document.addEventListener("DOMContentLoaded",obtenerIDCliente);
 
 //funciones
-function obtenerIDCliente(){
+async function obtenerIDCliente(){
     const parametrosUrl = new URLSearchParams(window.location.search);
     const idCliente = parametrosUrl.get("id");//obtiene el id del cliente
-    obtenerCliente(idCliente);
+    const cliente = await obtenerCliente(idCliente);
+
+    console.log(cliente);
 }
+
