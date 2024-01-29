@@ -1,4 +1,4 @@
-import {mostrarAlerta} from "./funciones.js";
+import {mostrarAlerta,validar} from "./funciones.js";
 import {nuevoCliente} from "./api.js";
 export const formulario = document.querySelector("#formulario");
 
@@ -25,8 +25,4 @@ function validarCampos(e){
     }
     //pasando la validacion agregamos los datos del cliente en la api     
     nuevoCliente(cliente)   
-}
-function validar(obj){
-    //verifica que todos los campos esten completos
-    return Object.values(obj).every(campo => campo === "");
 }

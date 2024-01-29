@@ -19,3 +19,8 @@ export function mostrarAlerta(mensaje){
         }, 2000);
     }
 }
+
+export function validar(obj){
+    //verifica que todos los campos esten completos
+    return !Object.values(obj).every(campo => campo !== "");
+}

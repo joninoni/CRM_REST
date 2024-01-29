@@ -1,12 +1,19 @@
 import {obtenerCliente} from "./api.js";
+import {mostrarAlerta,validar} from "./funciones.js"
 //variables
 const nombreInput=document.querySelector("#nombre");
 const emailInput=document.querySelector("#email");
 const empresaInput=document.querySelector("#empresa");
 const telefonoInput=document.querySelector("#telefono");
 const idInput=document.querySelector("#id");
+
+const formulario=document.querySelector("#formulario");
+
 //eventos
-    document.addEventListener("DOMContentLoaded",obtenerIDCliente);
+document.addEventListener("DOMContentLoaded",()=>{
+    obtenerIDCliente();
+    formulario.addEventListener("submit",validarFormulario);
+});
 
 //funciones
 async function obtenerIDCliente(){
@@ -25,4 +32,20 @@ function mostrarCliente(cliente){
     empresaInput.value=empresa;
     telefonoInput.value=telefono;
     idInput.value=id;
+}
+
+function validarFormulario(e){
+    e.preventDefault();
+    //validamos que los campos esten llenos
+    const cliente={
+        nombre:nombreInput.value,
+        email:emailInput.value,
+        telefono:telefonoInput.value,
+        empresa:empresaInput.value,
+        id:idInput.value,
+    }
+    if (validar(cliente)) {
+        mostrarAlerta("Todos los campos son obligatorios");
+        return;
+    }
 }
