@@ -1,6 +1,6 @@
 import {mostrarAlerta,validar} from "./funciones.js";
 import {nuevoCliente} from "./api.js";
-export const formulario = document.querySelector("#formulario");
+const formulario = document.querySelector("#formulario");
 
 formulario.addEventListener("submit",validarCampos);
 

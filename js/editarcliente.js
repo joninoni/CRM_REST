@@ -1,4 +1,4 @@
-import {obtenerCliente} from "./api.js";
+import {obtenerCliente,editarCliente} from "./api.js";
 import {mostrarAlerta,validar} from "./funciones.js"
 //variables
 const nombreInput=document.querySelector("#nombre");
@@ -48,4 +48,6 @@ function validarFormulario(e){
         mostrarAlerta("Todos los campos son obligatorios");
         return;
     }
+    //pasa la validacion
+    editarCliente(cliente)
 }

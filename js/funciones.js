@@ -1,4 +1,3 @@
-import {formulario} from "./nuevo_cliente.js"
 export function mostrarAlerta(mensaje){
     const alerta = document.querySelector(".bg-red-100");
 
@@ -12,7 +11,7 @@ export function mostrarAlerta(mensaje){
             <strong class="font-bold">Error!</strong>
             <span class="block sm:inline">${mensaje}</span>
         `;
-
+        const formulario = document.querySelector("#formulario");
         formulario.appendChild(alerta);
         setTimeout(() => {
            alerta.remove();
